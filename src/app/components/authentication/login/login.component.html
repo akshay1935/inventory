@@ -1,0 +1,46 @@
+<div class="custom_login_div">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#"><b>Inventory System</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+
+                <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" formControlName="username" placeholder="Username">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                        <span *ngIf="!loginForm.controls.username.valid && !loginForm.controls.username.pristine" class="invalid-feedback is-invalid">Please enter username</span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                        <span *ngIf="!loginForm.controls.password.valid && !loginForm.controls.password.pristine" class="invalid-feedback is-invalid">Please enter passsword</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+</div>
