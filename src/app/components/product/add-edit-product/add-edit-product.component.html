@@ -1,0 +1,74 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Product Details</h3>
+                        </div>
+
+                        <!-- form start -->
+                        <form [formGroup]="productForm" (ngSubmit)="submitForm()">
+                            <div class="card-body">
+                                <div class="list-actions">
+                                    <a routerLink="/product/list-product" type="button" class="btn btn-primary btn-xs">List Product</a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-lbl" for="name">Product Name</label>
+                                            <input type="email" class="form-control" formControlName="name" placeholder="Enter product name">
+                                            <span *ngIf="productForm.controls.name.errors?.required && !productForm.controls.name.pristine" class="invalid-feedback is-invalid">Please enter product name</span>
+                                            <span *ngIf="productForm.controls.name.errors?.pattern && !productForm.controls.name.pristine" class="invalid-feedback is-invalid">Please enter valid name</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-lbl" for="description">Description</label>
+                                            <textarea class="form-control" formControlName="description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group col-sm-8" style="padding-left:0px">
+                                            <label class="form-lbl" for="price">Product Price</label>
+                                            <input type="email" class="form-control" formControlName="price" placeholder="Enter product price">
+                                            <span *ngIf="productForm.controls.price.errors?.required && !productForm.controls.price.pristine" class="invalid-feedback is-invalid">Please enter product price</span>
+                                            <span *ngIf="productForm.controls.price.errors?.pattern && !productForm.controls.price.pristine" class="invalid-feedback is-invalid">Please enter valid price</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="form-lbl" for="stockStatus">Stock Status</label>
+                                            <div style="display:flex;gap:10px">
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="rbAvailable" value="AVAILABLE" name="stockStatus" formControlName="stockStatus" (change)="changeStatus($event)">
+                                                    <label for="rbAvailable" class="custom-control-label form-lbl">AVAILABLE</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="rbEmpty" value="EMPTY" name="stockStatus" formControlName="stockStatus" (change)="changeStatus($event)">
+                                                    <label for="rbEmpty" class="custom-control-label form-lbl">EMPTY</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+        </div>
+    </section>

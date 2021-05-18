@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+.invalid-feedback {
+    display: block !important;
+}
+
+body:not(.sidebar-mini-md) .content-wrapper,
+body:not(.sidebar-mini-md) .main-footer,
+body:not(.sidebar-mini-md) .main-header {
+    margin-left: 0px !important;
+}
+
+.btn-action {
+    padding: 2px 7px 2px 7px !important;
+    margin-right: 5px;
+}
+
+.list-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.form-lbl {
+    color: #636060;
+    font-weight: 500 !important;
+    font-size: 14px;
+}
